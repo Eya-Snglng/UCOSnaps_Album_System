@@ -33,6 +33,7 @@ $photos = getPhotosByAlbum($pdo, $album_id);
 <body>
     <?php include 'navbar.php'; ?>
 
+    <br><br><br><br><br><br>
     <h1><?php echo htmlspecialchars($album['album_name']); ?></h1>
 
     <div class="albumActions" style="margin-bottom: 20px;">
