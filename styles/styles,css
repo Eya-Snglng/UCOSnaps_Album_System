@@ -1,0 +1,462 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fafafa;
+    color: #333;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #6a1b9a;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 18px;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #8e24aa;
+    border-radius: 4px;
+}
+
+/* Container */
+.container {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* User Info */
+.userInfo {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.userInfo h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.userInfo span {
+    color: #6a1b9a;
+    font-weight: bold;
+}
+
+/* Updated Album Photos */
+.albumPhotos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.albumPhotos .photoContainer {
+    width: 30%; /* Adjusted the width of each photo container */
+    max-width: 300px; /* Ensures that the images won't get too large */
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.albumPhotos .photoContainer img {
+    width: 100%; /* Ensure the image fills the container */
+    max-height: 200px; /* Limits the height to maintain aspect ratio */
+    object-fit: cover; /* Keeps the image within the container without distortion */
+    border-radius: 4px;
+}
+
+/* For smaller screens (mobile) */
+@media (max-width: 768px) {
+    .albumPhotos .photoContainer {
+        width: 45%; /* Makes the containers slightly larger on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .albumPhotos .photoContainer {
+        width: 100%; /* Stacks images on top of each other for mobile screens */
+    }
+}
+
+
+/* Photo Container Styles */
+.photoContainer {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Limits the width of each container */
+    max-width: 250px; /* Ensures containers aren't too wide */
+    margin: 10px; /* Adds some spacing between the containers */
+    text-align: center;
+}
+
+/* Image Styles */
+.photoContainer img {
+    width: 100%;
+    max-height: 180px; /* Keeps images from being too large */
+    object-fit: cover; /* Ensures the image fills the container without distortion */
+    border-bottom: 1px solid #ddd;
+}
+
+/* Photo Description Section */
+.photoDescription {
+    padding: 12px;
+    text-align: center;
+    background-color: #f9f9f9; /* Adds a subtle background to the description */
+}
+
+/* Description Text Styles */
+.photoDescription h4 {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* Timestamp Styling */
+.photoDescription i {
+    font-size: 12px;
+    color: #888;
+}
+
+/* Links in Description */
+.photoDescription a {
+    color: #6a1b9a; /* Purple shade */
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px;
+    font-size: 14px;
+}
+
+/* Link Hover Effect */
+.photoDescription a:hover {
+    text-decoration: underline;
+}
+
+/* For smaller screens (responsive design) */
+@media (max-width: 768px) {
+    .photoContainer {
+        width: 45%; /* Slightly larger containers for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .photoContainer {
+        width: 100%; /* Full width containers for mobile */
+    }
+}
+
+
+/* Buttons and Form Inputs */
+input[type="text"], input[type="password"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fafafa;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #6a1b9a;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #8e24aa;
+}
+
+.insertPhotoForm {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    width: 400px; /* Set a fixed width */
+    margin-left: auto;
+    margin-right: auto; /* Center it */
+}
+
+.insertPhotoForm h3 {
+    color: #6a1b9a;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.insertPhotoForm label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.insertPhotoForm input[type="text"], 
+.insertPhotoForm input[type="file"] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fafafa;
+    font-size: 16px;
+}
+
+.insertPhotoForm input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.insertPhotoForm input[type="submit"]:hover {
+    background-color: #8e24aa;
+}
+
+/* Album Actions Container */
+.albumActions {
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Form Styling */
+.albumActions form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Submit Button Styling */
+.albumActions input[type="submit"] {
+    background-color: #6a1b9a; /* Purple background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Submit Button Hover Effect */
+.albumActions input[type="submit"]:hover {
+    background-color: #8e24aa; /* Lighter purple on hover */
+}
+
+/* Text Input Styling */
+.albumActions input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 80%;
+    max-width: 400px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/* Text Input Focus Styling */
+.albumActions input[type="text"]:focus {
+    border-color: #6a1b9a; /* Purple border on focus */
+    outline: none;
+}
+
+/* Breakline Styling */
+.albumActions br {
+    margin-bottom: 10px;
+}
+
+/* Album Form Styling */
+.albumForm {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.albumForm input[type="text"],
+.albumForm input[type="password"],
+.albumForm input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.albumForm input[type="submit"] {
+    background-color: #6a1b9a; /* Purple shade */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.albumForm input[type="submit"]:hover {
+    background-color: #8e24aa; /* Lighter purple shade */
+}
+
+/* For smaller screens (responsive design) */
+@media (max-width: 768px) {
+    .albumForm {
+        padding: 15px;
+        width: 90%; /* Adjust width for better responsiveness on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .albumForm {
+        width: 100%; /* Full width form on mobile */
+        padding: 10px;
+    }
+}
+
+
+/* Profile Page */
+.profile-page h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.profile-page a {
+    text-decoration: none;
+    color: #6a1b9a;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.profile-page a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .albumPhotos {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .userInfo {
+        width: 90%;
+    }
+
+    .photoContainer {
+        width: 100%;
+    }
+}
+
+/* Box Container */
+.box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    width: 90%;
+}
+
+/* Heading Style */
+.box h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #6a1b9a; /* Purple color for the heading */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* List Styling */
+.box ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: disc;
+    padding: 0;
+    margin: 0;
+}
+
+.box li {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #444;
+    text-align: center;
+}
+
+/* Link Styling */
+.box li a {
+    color: #6a1b9a;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for the links */
+.box li a:hover {
+    color: #8e24aa; /* Lighter purple on hover */
+    text-decoration: underline;
+}
